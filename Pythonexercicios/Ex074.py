@@ -1,0 +1,11 @@
+from random import randint
+#pode fazer tb assim: n = (randit(0,10), randit(0,10), randit(0,10), randit(0,10), randit(0,10))
+a = randint(0, 10)
+b = randint(0, 10)
+c = randint(0, 10)
+d = randint(0, 10)
+e = randint(0, 10)
+numeros = (a, b, c, d, e)
+print(f'Os númeos sorteados foram : {numeros}')
+print(f'O maior valor da lista é {max(numeros)}')
+print(f'O menor valor da lista é {min(numeros)}')
