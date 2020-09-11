@@ -1,0 +1,17 @@
+#include<stdio.h>
+#include<stdlib.h>
+#include<locale.h>
+
+int main(){
+    
+  //Set do locale
+  setlocale(LC_ALL, "Portuguese");
+  
+  //Saída
+  for(int i = 0; i <= 100000; i += 1000){
+    printf("%d\n", i);
+  }
+  
+  return 0;
+
+}
