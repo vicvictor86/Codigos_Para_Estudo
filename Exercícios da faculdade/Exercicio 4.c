@@ -4,11 +4,13 @@
 
 int main(void) {
 
-  //DeclaraÁ„o de vari·veis e set do locale
+  /*Calcular e imprimir a quantia recebida por cada um dos ganhadores.*/
+
+  //Declara√ß√£o de vari√°veis e set do locale
   setlocale(LC_ALL, "Portuguese");
   float importancia = 780000.00;
 
-  //SaÌda
+  //Sa√≠da
   printf("O primeiro ganhador recebeu: %.2f\n", importancia * 0.46);
   printf("O segundo ganhador recebeu: %.2f\n", importancia * 0.32);
   printf("O terceiro ganhador recebeu: %.2f\n", importancia * 0.22);

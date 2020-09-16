@@ -4,16 +4,16 @@
 
 int main(void) {
   
-  //Declaração de variáveis e set do locale
+  //DeclaraÃ§Ã£o de variÃ¡veis e set do locale
   setlocale(LC_ALL, "Portuguese");
   float numero = 0.00;
   
-  //Entrada do usuário
-  printf("Digite um número: ");
+  //Entrada do usuÃ¡rio
+  printf("Digite um nÃºmero: ");
   scanf("%f", &numero);
   
-  //Saída
-  printf("A quinta parte desse número é: %.2f", numero / 5);
+  //SaÃ­da
+  printf("A quinta parte desse nÃºmero Ã©: %.2f", numero / 5);
 
   return 0;
 

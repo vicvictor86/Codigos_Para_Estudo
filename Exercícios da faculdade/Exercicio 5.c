@@ -4,26 +4,26 @@
 
 int main(void) {
 
-  //DeclaraÁ„o de vari·veis e set do locale
+  //Declara√ß√£o de vari√°veis e set do locale
   setlocale(LC_ALL, "Portuguese");
   float salario = 0.00, prestacao = 0.00;
 
   //Entrada
-  printf("Digite seu sal·rio: ");
+  printf("Digite seu sal√°rio: ");
   scanf("%f", &salario);
 
-  printf("Digite a prestaÁ„o: ");
+  printf("Digite a presta√ß√£o: ");
   scanf("%f", &prestacao);
 
-  //SaÌda
+  //Sa√≠da
   if(prestacao > 0.20 * salario){
 
-    printf("EmprÈstimo n„o concedido");
+    printf("Empr√©stimo n√£o concedido");
 
   }
   else{
 
-    printf("EmprÈstimo concedido");
+    printf("Empr√©stimo concedido");
   
   }
 

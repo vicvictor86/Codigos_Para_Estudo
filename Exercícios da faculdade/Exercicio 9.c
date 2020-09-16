@@ -4,21 +4,21 @@
 
 int main(){
     
-  //DeclaraÁ„o de vari·veis e set do locale
+  //Declara√ß√£o de vari√°veis e set do locale
   setlocale(LC_ALL, "Portuguese");
   int numero = 0, total = 0;
 
-  //Entrada do usu·rio
+  //Entrada do usu√°rio
   for(int i = 1; i <= 10; i++){
 
-    printf("Digite o %d n˙mero: ", i);
+    printf("Digite o %d n√∫mero: ", i);
     scanf("%d", &numero);
     total += numero;
 
   }
 
-  //SaÌda
-  printf("A mÈdia dos 10 n˙meros È: %.2f", (float)total / 10);
+  //Sa√≠da
+  printf("A m√©dia dos 10 n√∫meros √©: %.2f", (float)total / 10);
   
   return 0;
 

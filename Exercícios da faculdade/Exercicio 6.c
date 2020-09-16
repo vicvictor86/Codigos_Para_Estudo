@@ -4,50 +4,50 @@
 
 int main(){
 
-    //Declaração de variáveis e set do locale	
+    //DeclaraÃ§Ã£o de variÃ¡veis e set do locale	
     setlocale(LC_ALL, "Portuguese");
 
-    //Protótipo local da função
+    //ProtÃ³tipo local da funÃ§Ã£o
     double setNota ();
 
-    // trabalho de laboratório : peso 2; avaliação : peso 3; exame final : peso 5;
+    // trabalho de laboratÃ³rio : peso 2; avaliaÃ§Ã£o : peso 3; exame final : peso 5;
     double notaLaboratorio = 0.00, notaAvalicacao = 0.00, notaExame = 0.00, notaFinal = 0.00;
-    //O tipo das variáveis é double devido este tipo possuir maior precisão
-    //tornando possível a comparação da nota nos if's
+    //O tipo das variÃ¡veis Ã© double devido este tipo possuir maior precisÃ£o
+    //tornando possÃ­vel a comparaÃ§Ã£o da nota nos if's
 
     //Entrada
-    printf("Digite sua nota no trabalho de laboratório: ");
+    printf("Digite sua nota no trabalho de laboratÃ³rio: ");
     notaLaboratorio = setNota();
 
-    printf("Agora a da avaliação semestral: ");
+    printf("Agora a da avaliaÃ§Ã£o semestral: ");
     notaAvalicacao = setNota();
 
     printf("Agora a do exame final: ");
     notaExame = setNota();
 
-    //Saída
+    //SaÃ­da
     notaFinal = (notaLaboratorio * 2 + notaAvalicacao * 3 + notaExame * 5) / 10;
     printf("Sua nota final foi: %.2f logo ", notaFinal);
 
     if(notaFinal >= 3 && notaFinal <= 4.9){
-        printf("você está de recuperação.");
+        printf("vocÃ© estÃ¡ de recuperaÃ§Ã£o.");
     }
-    //Não precisa verificar se é maior ou igual a 0, pois a função setNota já
-    //verifica se a nota é maior que 0 e 0 está incluido nos números menores que 2,9
+    //NÃ£o precisa verificar se Ã© maior ou igual a 0, pois a funÃ§Ã£o setNota jÃ¡
+    //verifica se a nota Ã© maior que 0 e 0 estÃ¡ incluido nos nÃºmeros menores que 2,9
     else if (notaFinal <= 2.9){
-        printf("você foi reprovado.");
+        printf("vocÃª foi reprovado.");
     }
     else if(notaFinal >= 5 && notaFinal <= 10){
-        printf("você foi aprovado");
+        printf("vocÃª foi aprovado");
     }
 	
     return 0;
 }
 
-//Vai pedir a nota e verificar se a nota é maior ou igual a 0 e menor ou igual a 10
+//Vai pedir a nota e verificar se a nota Ã© maior ou igual a 0 e menor ou igual a 10
 double setNota(){
 
-    //Foi conveniente criar uma função devido com ela ser possível evitar a repetição de código
+    //Foi conveniente criar uma funÃ§Ã£o devido com ela ser possÃ­vel evitar a repetiÃ§Ã£o de cÃ³digo
     //E fazer um input generalizado
     int notaValida = 0.00;
     double nota = 0.00;
@@ -61,7 +61,7 @@ double setNota(){
         }
         else{
 
-            printf("\nNota inválida, por favor tente novamente.\n");
+            printf("\nNota invÃ¡lida, por favor tente novamente.\n");
             printf("Digite a nota novamente: ");
             scanf("%lf", &nota);
             

@@ -4,16 +4,16 @@
 
 int main(){
     
-  //Declaração de variáveis e set do locale
+  //DeclaraÃ§Ã£o de variÃ¡veis e set do locale
   setlocale(LC_ALL, "Portuguese");
   char resposta;
   int total = 0;
 
-  //Entrada do usuário
-  printf("Você considera 0 par ? :");
+  //Entrada do usuÃ¡rio
+  printf("VocÃª considera 0 par ? :");
   scanf("%c", &resposta);
 
-  //Saída
+  //SaÃ­da
   if(resposta == 's'){
 
     //Inicia do 0
@@ -23,7 +23,7 @@ int main(){
 
     }
 
-    printf("A soma dos 50 primeiros números pares(contando com o 0) é: %d.", total);
+    printf("A soma dos 50 primeiros nÃºmeros pares(contando com o 0) Ã©: %d.", total);
 
   }
   else if(resposta == 'n'){
@@ -35,11 +35,11 @@ int main(){
 
     }
 
-    printf("A soma dos 50 primeiros números pares(sem contar com o 0) é: %d.", total);
+    printf("A soma dos 50 primeiros nÃºmeros pares(sem contar com o 0) Ã©: %d.", total);
 
   }
   else{
-    printf("Digite uma resposta válida.");
+    printf("Digite uma resposta vÃ¡lida.");
   }
   
   return 0;

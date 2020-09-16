@@ -4,17 +4,17 @@
 
 int main(void) {
 
-  //DeclaraÁ„o de vari·veis e set do locale
+  //Declara√ß√£o de vari√°veis e set do locale
   setlocale(LC_ALL, "Portuguese");
   float celsius = 0.00, kelvin = 0.00;
 
-  //Entrada do usu·rio
+  //Entrada do usu√°rio
   printf("Digite a temperatura em Kelvin: ");
   scanf("%f", &kelvin);
 
   celsius = kelvin - 273.15;
 
-  //SaÌda
+  //Sa√≠da
   printf("%.2f K equivale a %.2f em celsius", kelvin, celsius);
 
   return 0;

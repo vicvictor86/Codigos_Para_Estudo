@@ -4,16 +4,16 @@
 
 int main(void) {
 
-  //DeclaraÁ„o de vari·veis e set do locale
+  //Declara√ß√£o de vari√°veis e set do locale
   setlocale(LC_ALL, "Portuguese");
   float valor = 0.00, desconto = 0.00;
 
-  //Entrada do usu·rio
+  //Entrada do usu√°rio
   printf("Digite o valor do produto: ");
   scanf("%f", &valor);
 
-  //SaÌda
-  printf("O valor com desconto È: %.2f", 0.88 * valor);
+  //Sa√≠da
+  printf("O valor com desconto √©: %.2f", 0.88 * valor);
 
   return 0;
 

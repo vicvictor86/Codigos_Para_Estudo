@@ -4,28 +4,28 @@
 
 int main(){
   
-  //Protótipo da função
+  //ProtÃ³tipo da funÃ§Ã£o
   void soma(int, int); 
 
-  //Declaração de variáveis e set do locale
+  //DeclaraÃ§Ã£o de variÃ¡veis e set do locale
   setlocale(LC_ALL, "Portuguese");
   int numero1 = 0, numero2 = 0;
 
-  //Entrada do usuário
-  printf("Digite o primeiro número: ");
+  //Entrada do usuÃ¡rio
+  printf("Digite o primeiro nÃºmero: ");
   scanf("%d", &numero1);
 
-  printf("Digite o segundo número: ");
+  printf("Digite o segundo nÃºmero: ");
   scanf("%d", &numero2);
 
-  //Chamada da função
+  //Chamada da funÃ§Ã£o
   soma(numero1, numero2);
 
   return 0;
 
 }
 
-//Função que vai fazer a soma
+//FunÃ§Ã£o que vai fazer a soma
 void soma(int numero1, int numero2){
 
   printf("%d + %d = %d", numero1, numero2, numero1 + numero2);
