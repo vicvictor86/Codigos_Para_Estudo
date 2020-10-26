@@ -1,4 +1,3 @@
-package Estrutura_Sequencial;
 public class HelloWorld{
 
     public static void main(String[] args){

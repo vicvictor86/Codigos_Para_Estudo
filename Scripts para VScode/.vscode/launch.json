@@ -1,0 +1,189 @@
+{
+    // Use IntelliSense to learn about possible attributes.
+    // Hover to view descriptions of existing attributes.
+    // For more information, visit: https://go.microsoft.com/fwlink/?linkid=830387
+    "version": "0.2.0",
+    "configurations": [
+        {
+            "type": "java",
+            "name": "CodeLens (Launch) - JogoDaVelha",
+            "request": "launch",
+            "mainClass": "JogoDaVelha.JogoDaVelha",
+            "projectName": "Scripts para VScode_c2018be2"
+        },
+        {
+            "type": "java",
+            "name": "Debug (Launch) - Current File",
+            "request": "launch",
+            "mainClass": "${file}"
+        },
+        {
+            "type": "java",
+            "name": "Debug (Launch)-AreaQuadrado<Scripts para VScode_c2018be2>",
+            "request": "launch",
+            "mainClass": "AreaQuadrado",
+            "projectName": "Scripts para VScode_c2018be2"
+        },
+        {
+            "type": "java",
+            "name": "Debug (Launch)-DuasPopulacao<Scripts para VScode_c2018be2>",
+            "request": "launch",
+            "mainClass": "DuasPopulacao",
+            "projectName": "Scripts para VScode_c2018be2"
+        },
+        {
+            "type": "java",
+            "name": "Debug (Launch)-EncontraConsoante<Scripts para VScode_c2018be2>",
+            "request": "launch",
+            "mainClass": "EncontraConsoante",
+            "projectName": "Scripts para VScode_c2018be2"
+        },
+        {
+            "type": "java",
+            "name": "Debug (Launch)-EntreNumeros<Scripts para VScode_c2018be2>",
+            "request": "launch",
+            "mainClass": "EntreNumeros",
+            "projectName": "Scripts para VScode_c2018be2"
+        },
+        {
+            "type": "java",
+            "name": "Debug (Launch)-Fibonacci<Scripts para VScode_c2018be2>",
+            "request": "launch",
+            "mainClass": "Fibonacci",
+            "projectName": "Scripts para VScode_c2018be2"
+        },
+        {
+            "type": "java",
+            "name": "Debug (Launch)-HelloWorld<Scripts para VScode_c2018be2>",
+            "request": "launch",
+            "mainClass": "HelloWorld",
+            "projectName": "Scripts para VScode_c2018be2"
+        },
+        {
+            "type": "java",
+            "name": "Debug (Launch)-JogoDaVelha<Scripts para VScode_c2018be2>",
+            "request": "launch",
+            "mainClass": "JogoDaVelha",
+            "projectName": "Scripts para VScode_c2018be2"
+        },
+        {
+            "type": "java",
+            "name": "Debug (Launch)-LeituraDe5Numeros<Scripts para VScode_c2018be2>",
+            "request": "launch",
+            "mainClass": "LeituraDe5Numeros",
+            "projectName": "Scripts para VScode_c2018be2"
+        },
+        {
+            "type": "java",
+            "name": "Debug (Launch)-LeituraNome<Scripts para VScode_c2018be2>",
+            "request": "launch",
+            "mainClass": "LeituraNome",
+            "projectName": "Scripts para VScode_c2018be2"
+        },
+        {
+            "type": "java",
+            "name": "Debug (Launch)-MaiorNumero<Scripts para VScode_c2018be2>",
+            "request": "launch",
+            "mainClass": "MaiorNumero",
+            "projectName": "Scripts para VScode_c2018be2"
+        },
+        {
+            "type": "java",
+            "name": "Debug (Launch)-NotasBimestrais<Scripts para VScode_c2018be2>",
+            "request": "launch",
+            "mainClass": "NotasBimestrais",
+            "projectName": "Scripts para VScode_c2018be2"
+        },
+        {
+            "type": "java",
+            "name": "Debug (Launch)-NotasMedias<Scripts para VScode_c2018be2>",
+            "request": "launch",
+            "mainClass": "NotasMedias",
+            "projectName": "Scripts para VScode_c2018be2"
+        },
+        {
+            "type": "java",
+            "name": "Debug (Launch)-NumerosImpares<Scripts para VScode_c2018be2>",
+            "request": "launch",
+            "mainClass": "NumerosImpares",
+            "projectName": "Scripts para VScode_c2018be2"
+        },
+        {
+            "type": "java",
+            "name": "Debug (Launch)-NumerosParesImpares<Scripts para VScode_c2018be2>",
+            "request": "launch",
+            "mainClass": "NumerosParesImpares",
+            "projectName": "Scripts para VScode_c2018be2"
+        },
+        {
+            "type": "java",
+            "name": "Debug (Launch)-PedeNumero<Scripts para VScode_c2018be2>",
+            "request": "launch",
+            "mainClass": "PedeNumero",
+            "projectName": "Scripts para VScode_c2018be2"
+        },
+        {
+            "type": "java",
+            "name": "Debug (Launch)-Potencia<Scripts para VScode_c2018be2>",
+            "request": "launch",
+            "mainClass": "Potencia",
+            "projectName": "Scripts para VScode_c2018be2"
+        },
+        {
+            "type": "java",
+            "name": "Debug (Launch)-RaioDoCirculo<Scripts para VScode_c2018be2>",
+            "request": "launch",
+            "mainClass": "RaioDoCirculo",
+            "projectName": "Scripts para VScode_c2018be2"
+        },
+        {
+            "type": "java",
+            "name": "Debug (Launch)-SomaMedia<Scripts para VScode_c2018be2>",
+            "request": "launch",
+            "mainClass": "SomaMedia",
+            "projectName": "Scripts para VScode_c2018be2"
+        },
+        {
+            "type": "java",
+            "name": "Debug (Launch)-Tabuada<Scripts para VScode_c2018be2>",
+            "request": "launch",
+            "mainClass": "Tabuada",
+            "projectName": "Scripts para VScode_c2018be2"
+        },
+        {
+            "type": "java",
+            "name": "Debug (Launch)-TestaInformacao<Scripts para VScode_c2018be2>",
+            "request": "launch",
+            "mainClass": "TestaInformacao",
+            "projectName": "Scripts para VScode_c2018be2"
+        },
+        {
+            "type": "java",
+            "name": "Debug (Launch)-Teste0a10<Scripts para VScode_c2018be2>",
+            "request": "launch",
+            "mainClass": "Teste0a10",
+            "projectName": "Scripts para VScode_c2018be2"
+        },
+        {
+            "type": "java",
+            "name": "Debug (Launch)-UmaVinte<Scripts para VScode_c2018be2>",
+            "request": "launch",
+            "mainClass": "UmaVinte",
+            "projectName": "Scripts para VScode_c2018be2"
+        },
+        {
+            "type": "java",
+            "name": "Debug (Launch)-ranido_java<Scripts para VScode_c2018be2>",
+            "request": "launch",
+            "mainClass": "ranido_java",
+            "projectName": "Scripts para VScode_c2018be2"
+        },
+        {
+            "type": "java",
+            "name": "Debug (Launch)-solucao<Scripts para VScode_c2018be2>",
+            "request": "launch",
+            "mainClass": "solucao",
+            "projectName": "Scripts para VScode_c2018be2"
+        }
+    ]
+}

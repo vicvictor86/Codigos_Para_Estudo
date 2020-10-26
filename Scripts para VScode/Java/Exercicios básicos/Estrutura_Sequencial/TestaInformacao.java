@@ -1,5 +1,3 @@
-package Estrutura_Sequencial;
-
 import java.util.Scanner;
 
 public class TestaInformacao {

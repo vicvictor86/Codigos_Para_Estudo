@@ -1,5 +1,3 @@
-package Estruturas_De_Repeticao;
-
 import java.util.ArrayList;
 import java.util.Scanner;
 

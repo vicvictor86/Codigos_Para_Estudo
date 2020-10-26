@@ -1,4 +1,3 @@
-package Estruturas_De_Repeticao;
 import java.util.Scanner;
 
 class Teste0a10 {

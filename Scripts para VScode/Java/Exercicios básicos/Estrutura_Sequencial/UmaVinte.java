@@ -1,5 +1,3 @@
-package Estrutura_Sequencial;
-
 public class UmaVinte {
 
     public static void main(String[] args) {
