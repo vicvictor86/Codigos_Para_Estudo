@@ -1,0 +1,106 @@
+<meta charset="UTF-8">
+
+<canvas width="600" height="400"></canvas>
+
+<script>
+
+    function desenhaQuadrado(x, y, tamanho, cor) {
+        pincel.fillStyle = cor;
+        pincel.fillRect(x, y, tamanho, tamanho)
+        pincel.fill();
+    }
+
+    function desenhaCirculo(x, y, raio, cor) {
+        pincel.fillStyle = cor;
+        pincel.beginPath();
+        pincel.arc(x, y, raio, 0, 2 * 3.14);
+        pincel.fill();
+    }
+
+    function desenhaPaletaDeCores() {
+        desenhaQuadrado(xVermelho, yQuadrados, tamanhoQuadrados, 'red');
+        desenhaQuadrado(xVerde, yQuadrados, tamanhoQuadrados, 'green');
+        desenhaQuadrado(xAzul, yQuadrados, tamanhoQuadrados, 'blue');
+    }
+
+
+    function lidaComMovimentoDoMouse(evento) {
+        var x = evento.pageX - tela.offsetLeft;
+        var y = evento.pageY - tela.offsetTop;
+
+        if(desenha && (y > 5 + tamanhoQuadrados || x > 5 + 3 * tamanhoQuadrados)) {
+            desenhaCirculo(x, y, 5, corAtual);
+        }
+    }
+
+    function habilitaDesenhar() {
+
+        if(!escolhendoCor()){
+            desenha = true;
+        }
+        
+    }
+
+    function desabilitaDesenhar() {
+        desenha = false;
+    }
+
+    //Testar se pra uma função chamar a outra e funcionar elas devem está em ordem de existencia : Não precisam está na ordem
+    function escolhendoCor(posX, posY, xClick, yClick, cor){
+
+        if(xClick <= posX + tamanhoQuadrados/2 
+            && xClick >= posX - tamanhoQuadrados/2 
+            && yClick <= posY + tamanhoQuadrados/2 
+            && yClick >= posY - tamanhoQuadrados/2 ){
+
+                corAtual = cor;
+                console.log(corAtual);
+
+                return true;
+        }
+        
+        return false;
+
+    }
+
+    function TrocarCor(evento){
+
+        var x = evento.pageX - tela.offsetLeft;
+        var y = evento.pageY - tela.offsetTop;
+
+        var centroVermelhoX = xVermelho + tamanhoQuadrados / 2;
+        var centroVerdeX = xVerde + tamanhoQuadrados / 2;
+        var centroAzulX = xAzul + tamanhoQuadrados / 2;
+
+        var centroYQuadrados = yQuadrados + tamanhoQuadrados / 2;
+
+        escolhendoCor(centroVermelhoX, centroYQuadrados, x, y, "red");
+        escolhendoCor(centroVerdeX, centroYQuadrados, x, y, "green");
+        escolhendoCor(centroAzulX, centroYQuadrados, x, y, "blue");
+        
+    }
+
+    var tela = document.querySelector('canvas');
+    var pincel = tela.getContext('2d');
+    pincel.fillStyle = 'lightgray';
+    pincel.fillRect(0, 0, 600, 400);
+
+    var desenha = false;
+    var corAtual = 'blue';
+    var xVermelho = 0;
+    var xVerde  = 50;
+    var xAzul = 100;
+    var yQuadrados = 0;
+    var tamanhoQuadrados = 50;
+
+    desenhaPaletaDeCores(); // mostra os quadrados de seleção de cores
+
+    tela.onmousemove = lidaComMovimentoDoMouse;
+
+    tela.onclick = TrocarCor;
+    
+    tela.onmousedown = habilitaDesenhar;
+    //Mudar para document
+    document.onmouseup = desabilitaDesenhar;
+
+</script>
