@@ -2,37 +2,38 @@
 #include <stdlib.h>
 #include <time.h>
 
+#define TAMANHO 8
+
 //Ordenação crescente
 int estaordenado(int *vetor, int tamanho)
 {
-    
-    //A decrementação antes da variável foi colocada a fim de não utilizarmos o valor máximo do tamanho
+	//A decrementação antes da variável foi colocada a fim de não utilizarmos o valor máximo do tamanho
     //Pois dessa forma ao entrarmos no if iriamos comparar uma posição no vetor que não existe
-    while (--tamanho >= 1) 
+    while (tamanho > 1)
     {
-        //Se o número da direita for menor que o da esquerda
-        if (vetor[tamanho] < vetor[tamanho-1]) 
+        tamanho--;
+        if (vetor[tamanho] < vetor[tamanho - 1])
         {
-            //Não está ordenado
+        	//Retorna zero se algum elemento posterior for maior que um anterior
             return 0;
         }
     }
-
+	//Retorna um se os elementos estiverem ordenados
     return 1;
 
 }
- 
+
 float embaralhar(int *vetor, int tamanho)
 {
-
     int i = 0, auxiliar = 0, posicaorandomica = 0;
     float quantidadedeloopings = 0;
-
+    
+	//Troca os elementos do vetor de posição (quantidade de loopings contabilizada)
     for(i = 0; i < tamanho; i++)
     {
         
         auxiliar = vetor[i];
-        //Vai fazer com que a variável posicaorandomica só possa receber numeros de 0 a tamanho - 1 
+        //Limita os números que posicaorandomica recebe de 0 a tamanho - 1 
         posicaorandomica = rand() % tamanho;
 
         vetor[i] = vetor[posicaorandomica];
@@ -51,8 +52,9 @@ float bogosort(int *vetor, int tamanho)
 
     float quantidadedeloopings = 0;
     srand(time(NULL));
-
-    while (!estaordenado(vetor, tamanho)) 
+	
+	//Repete o algoritmo se o vetor não estiver ordenado
+    while (!estaordenado(vetor, tamanho))
     {
         quantidadedeloopings += embaralhar(vetor, tamanho);
     }
@@ -60,24 +62,34 @@ float bogosort(int *vetor, int tamanho)
     return quantidadedeloopings;
 
 }
- 
+
 int main()
 {
 
-    int numeros[] = {1, 10, 9, 7, 3, 0};
-
-    int i = 0;
+    int i, numeros[] = { 1, 10, 9,  7, 3, 0, 2, 4 };
     float quantidadedeloopings = 0;
+	clock_t inicio, fim;
+	
+    //Marca o início da quantidade de ticks da cpu
+	inicio = clock();
+	
+    quantidadedeloopings = bogosort(numeros, TAMANHO);
     
-    quantidadedeloopings = bogosort(numeros, 6);
+    //Marca o fim da quantidade de ticks da cpu
+    fim = clock();
     
-    for (i=0; i < 6; i++) 
+    for (i=0; i < TAMANHO; i++)
     {
         printf("%d ", numeros[i]);
     }
-
-    printf("\nQuantidade de loopings feitos: %.f", quantidadedeloopings);
     
+    printf("\nQuantidade de loopings feitos: %.f, tempo de execucao: %.3lf)",
+	quantidadedeloopings, (double)(fim - inicio) / CLOCKS_PER_SEC);
+    //Diferenças da quantidade de ticks após o fim da execução da função
+    //dividido pela quantidade de ticks da cpu por segundo do windows
+
+    printf("\n");
+
     return 0;
 
 }
