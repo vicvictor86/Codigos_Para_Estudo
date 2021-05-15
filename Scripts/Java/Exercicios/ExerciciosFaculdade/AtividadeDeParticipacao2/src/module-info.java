@@ -1,0 +1,2 @@
+module atividadeDeParticipacao2 {
+}

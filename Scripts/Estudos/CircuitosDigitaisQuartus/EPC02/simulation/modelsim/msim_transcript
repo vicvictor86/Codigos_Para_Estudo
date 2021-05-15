@@ -1,0 +1,22 @@
+# Reading pref.tcl
+# do Tarefa01_run_msim_rtl_vhdl.do
+# if {[file exists rtl_work]} {
+# 	vdel -lib rtl_work -all
+# }
+# vlib rtl_work
+# vmap work rtl_work
+# Model Technology ModelSim - Intel FPGA Edition vmap 2020.1 Lib Mapping Utility 2020.02 Feb 28 2020
+# vmap work rtl_work 
+# Copying E:/Programas/modelsim_ase/win32aloem/../modelsim.ini to modelsim.ini
+# Modifying modelsim.ini
+# 
+# vcom -93 -work work {E:/Programming/Codigos_Para_Estudo/Scripts/Estudos/CircuitosDigitaisQuartus/EPC02/Tarefa01.vhd}
+# Model Technology ModelSim - Intel FPGA Edition vcom 2020.1 Compiler 2020.02 Feb 28 2020
+# Start time: 17:09:20 on Apr 18,2021
+# vcom -reportprogress 300 -93 -work work E:/Programming/Codigos_Para_Estudo/Scripts/Estudos/CircuitosDigitaisQuartus/EPC02/Tarefa01.vhd 
+# -- Loading package STANDARD
+# -- Compiling entity Tarefa01
+# -- Compiling architecture logic of Tarefa01
+# End time: 17:09:21 on Apr 18,2021, Elapsed time: 0:00:01
+# Errors: 0, Warnings: 0
+# 

@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="ProjectModuleManager">
+    <modules>
+      <module fileurl="file://$PROJECT_DIR$/BancoPoo/BancoPoo.iml" filepath="$PROJECT_DIR$/BancoPoo/BancoPoo.iml" />
+      <module fileurl="file://$PROJECT_DIR$/.idea/ExerciciosFaculdade.iml" filepath="$PROJECT_DIR$/.idea/ExerciciosFaculdade.iml" />
+      <module fileurl="file://$PROJECT_DIR$/LocadoraPOO/LocadoraPOO.iml" filepath="$PROJECT_DIR$/LocadoraPOO/LocadoraPOO.iml" />
+      <module fileurl="file://$PROJECT_DIR$/listaEncadeadaED/listaEncadeadaED.iml" filepath="$PROJECT_DIR$/listaEncadeadaED/listaEncadeadaED.iml" />
+    </modules>
+  </component>
+</project>

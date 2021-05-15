@@ -1,0 +1,48 @@
+m255
+K4
+z2
+!s11e vcom 2020.1 2020.02, Feb 28 2020
+13
+!s112 1.1
+!i10d 8192
+!i10e 25
+!i10f 100
+cModel Technology
+Z0 dE:/Programming/Codigos_Para_Estudo/Scripts/Estudos/CircuitosDigitaisQuartus/simulation/modelsim
+Eand_gate
+Z1 w1618510365
+!i122 0
+R0
+Z2 8E:/Programming/Codigos_Para_Estudo/Scripts/Estudos/CircuitosDigitaisQuartus/AND_GATE.vhd
+Z3 FE:/Programming/Codigos_Para_Estudo/Scripts/Estudos/CircuitosDigitaisQuartus/AND_GATE.vhd
+l0
+L1 1
+VVo_7V4R5Igd2odagU7Q>V2
+!s100 PBE?I>edlD3gS^h:>]QN^1
+Z4 OV;C;2020.1;71
+31
+Z5 !s110 1618516467
+!i10b 1
+Z6 !s108 1618516467.000000
+Z7 !s90 -reportprogress|300|-93|-work|work|E:/Programming/Codigos_Para_Estudo/Scripts/Estudos/CircuitosDigitaisQuartus/AND_GATE.vhd|
+!s107 E:/Programming/Codigos_Para_Estudo/Scripts/Estudos/CircuitosDigitaisQuartus/AND_GATE.vhd|
+!i113 1
+Z8 o-93 -work work
+Z9 tExplicit 1 CvgOpt 0
+Alogic
+DEx4 work 8 and_gate 0 22 Vo_7V4R5Igd2odagU7Q>V2
+!i122 0
+l9
+L8 4
+VTD`;bPQ=Yzn2ba8NANggl0
+!s100 ZQ8RlMTY6i:O6AnNTCo820
+R4
+31
+R5
+!i10b 1
+R6
+R7
+Z10 !s107 E:/Programming/Codigos_Para_Estudo/Scripts/Estudos/CircuitosDigitaisQuartus/AND_GATE.vhd|
+!i113 1
+R8
+R9

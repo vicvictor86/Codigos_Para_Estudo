@@ -1,0 +1,62 @@
+# Reading pref.tcl
+# do AND_GATE_run_msim_rtl_vhdl.do
+# if {[file exists rtl_work]} {
+# 	vdel -lib rtl_work -all
+# }
+# vlib rtl_work
+# vmap work rtl_work
+# Model Technology ModelSim - Intel FPGA Edition vmap 2020.1 Lib Mapping Utility 2020.02 Feb 28 2020
+# vmap work rtl_work 
+# Copying E:/Programas/modelsim_ase/win32aloem/../modelsim.ini to modelsim.ini
+# Modifying modelsim.ini
+# 
+# vcom -93 -work work {E:/Programming/Codigos_Para_Estudo/Scripts/Estudos/CircuitosDigitaisQuartus/AND_GATE.vhd}
+# Model Technology ModelSim - Intel FPGA Edition vcom 2020.1 Compiler 2020.02 Feb 28 2020
+# Start time: 16:54:27 on Apr 15,2021
+# vcom -reportprogress 300 -93 -work work E:/Programming/Codigos_Para_Estudo/Scripts/Estudos/CircuitosDigitaisQuartus/AND_GATE.vhd 
+# -- Loading package STANDARD
+# -- Compiling entity AND_GATE
+# -- Compiling architecture logic of AND_GATE
+# End time: 16:54:27 on Apr 15,2021, Elapsed time: 0:00:00
+# Errors: 0, Warnings: 0
+# 
+vsim work.and_gate
+# vsim work.and_gate 
+# Start time: 17:48:51 on Apr 15,2021
+# Loading std.standard
+# Loading work.and_gate(logic)
+wave create -driver freeze -pattern clock -initialvalue 0 -period 100ms -dutycycle 50 -starttime 0ns -endtime 1000ns sim:/and_gate/A
+# Editable Wave items are not compatible with the wave window's standard undo-redo.  Standard undo-redo has been disabled.
+wave create -driver freeze -pattern random -initialvalue 0 -period 50ps -random_type Uniform -seed 5 -starttime 0ns -endtime 1000ns sim:/and_gate/A
+# /and_gate/A already exists in the wave, cannot add twice
+# Usage: wave create -pattern <clock|constant|random|repeater|counter|none> <args>
+# See Command Reference manual for pattern specific <args>
+add wave -position insertpoint  \
+sim:/and_gate/B
+wave create -driver freeze -pattern random -initialvalue 0 -period 50ns -random_type Uniform -seed 5 -starttime 0ns -endtime 1000ns sim:/and_gate/B
+run
+# Note :: PA Debug File '' not found. PA Dataflow Coloring not enabled.
+wave create -driver freeze -pattern random -initialvalue 1 -period 50ns -random_type Normal -seed 5 -starttime 0ns -endtime 1000ns sim:/and_gate/B
+add wave -position insertpoint  \
+sim:/and_gate/S
+view -new wave
+# -new not supported on PE
+add wave -position insertpoint  \
+sim:/and_gate/S
+wave create -driver freeze -pattern clock -initialvalue 0 -period 100ns -dutycycle 50 -starttime 0ns -endtime 1000ns sim:/and_gate/A
+add wave -position insertpoint  \
+sim:/and_gate/S
+view -new wave
+# -new not supported on PE
+add wave -position insertpoint  \
+sim:/and_gate/S
+add wave -position insertpoint  \
+sim:/and_gate/A
+add wave  \
+sim:/and_gate/S
+add wave  \
+sim:/and_gate/A \
+sim:/and_gate/B \
+sim:/and_gate/S
+# End time: 18:06:16 on Apr 15,2021, Elapsed time: 0:17:25
+# Errors: 0, Warnings: 0

@@ -1,0 +1,1 @@
+SO: Windows 10, Java 12 ou Java 8, IDE: Eclipse 2021-3 e uso tbm o InteliJ 2020.3

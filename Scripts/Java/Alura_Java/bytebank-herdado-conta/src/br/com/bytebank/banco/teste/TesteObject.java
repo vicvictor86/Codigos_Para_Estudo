@@ -21,8 +21,8 @@ public class TesteObject {
 	
 	//Para que o println consiga usar como parametros,referencias do tipo cc e cp
 	//Sem saber da existência prévia dessas classes o Java se utiliza de uma classe mais
-	//genelarizada o object
-	//Então para criar um método gerala assim faz-se dessa forma
+	//generalizada o object
+	//Então para criar um método gera-la assim faz-se dessa forma
 	
 	static void println(Object referencia) {
 		

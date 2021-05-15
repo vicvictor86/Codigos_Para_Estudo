@@ -1,0 +1,11 @@
+entity AND_GATE is
+		port (
+			A,B	: in bit;
+			S		: out bit
+			);
+end AND_GATE;
+
+architecture logic of AND_GATE is
+		begin
+			S <=  A and B;
+end lógica; 

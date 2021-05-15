@@ -1,0 +1,48 @@
+m255
+K4
+z2
+!s11e vcom 2020.1 2020.02, Feb 28 2020
+13
+!s112 1.1
+!i10d 8192
+!i10e 25
+!i10f 100
+cModel Technology
+Z0 dE:/Programming/Codigos_Para_Estudo/Scripts/Estudos/CircuitosDigitaisQuartus/EPC02/simulation/modelsim
+Etarefa01
+Z1 w1618776525
+!i122 0
+R0
+Z2 8E:/Programming/Codigos_Para_Estudo/Scripts/Estudos/CircuitosDigitaisQuartus/EPC02/Tarefa01.vhd
+Z3 FE:/Programming/Codigos_Para_Estudo/Scripts/Estudos/CircuitosDigitaisQuartus/EPC02/Tarefa01.vhd
+l0
+L1 1
+V9MgeF6>Fm5AD;=;g9hYgo3
+!s100 hjlnFGm0<6VY[SiHB55=F1
+Z4 OV;C;2020.1;71
+31
+Z5 !s110 1618776561
+!i10b 1
+Z6 !s108 1618776560.000000
+Z7 !s90 -reportprogress|300|-93|-work|work|E:/Programming/Codigos_Para_Estudo/Scripts/Estudos/CircuitosDigitaisQuartus/EPC02/Tarefa01.vhd|
+!s107 E:/Programming/Codigos_Para_Estudo/Scripts/Estudos/CircuitosDigitaisQuartus/EPC02/Tarefa01.vhd|
+!i113 1
+Z8 o-93 -work work
+Z9 tExplicit 1 CvgOpt 0
+Alogic
+DEx4 work 8 tarefa01 0 22 9MgeF6>Fm5AD;=;g9hYgo3
+!i122 0
+l9
+L8 4
+VFDQKPUHM9V_fIdbnQgV>E0
+!s100 n8Cm6^;hT7FL9L6;WAOSV0
+R4
+31
+R5
+!i10b 1
+R6
+R7
+Z10 !s107 E:/Programming/Codigos_Para_Estudo/Scripts/Estudos/CircuitosDigitaisQuartus/EPC02/Tarefa01.vhd|
+!i113 1
+R8
+R9
