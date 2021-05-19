@@ -1,6 +1,6 @@
 import java.util.Date;
 
-public class Veiculos {
+public abstract class Veiculo {
 
     private String marca;
     private String modelo;
@@ -9,12 +9,15 @@ public class Veiculos {
     private double valorDiaria;
     private double valorDeBem;
     private double porcentagem;
+    private boolean alugado;
+    private int quantidadeAlugueisFechados;
+    private Cliente clienteAlugou;
 
-    public Veiculos(){
+    public Veiculo(){
 
     }
 
-    public Veiculos(String marca, String modelo, Date anoDeFabricacao, String placa, double valorDiaria, double valorDeBem, double porcentagem) {
+    public Veiculo(String marca, String modelo, Date anoDeFabricacao, String placa, double valorDiaria, double valorDeBem, double porcentagem) {
         this.marca = marca;
         this.modelo = modelo;
         this.anoDeFabricacao = anoDeFabricacao;
@@ -22,6 +25,9 @@ public class Veiculos {
         this.valorDiaria = valorDiaria;
         this.valorDeBem = valorDeBem;
         this.porcentagem = porcentagem;
+        this.alugado = false;
+        this.quantidadeAlugueisFechados = 0;
+        this.clienteAlugou = null;
     }
 
     public double seguroDiario(){
@@ -33,7 +39,7 @@ public class Veiculos {
     }
 
     public void depreciarVeiculo(double percentual){
-        valorDeBem -= valorDeBem * percentual;
+        valorDeBem -= (valorDeBem * percentual);
     }
 
     public void apreciarVeiculo(double percentual){
@@ -74,5 +80,30 @@ public class Veiculos {
 
     public double getValorDeBem() {
         return valorDeBem;
+    }
+
+    public boolean isAlugado(){
+        return this.alugado;
+    }
+
+    public int getQuantidadeAlugueisFechados() {
+        return quantidadeAlugueisFechados;
+    }
+
+    public Cliente getClienteAlugou() {
+        return clienteAlugou;
+    }
+
+    public void setClienteAlugou(Cliente clienteAlugou) {
+        this.clienteAlugou = clienteAlugou;
+    }
+
+    public void alugar(){
+        this.alugado = true;
+    }
+
+    public void devolver(){
+        this.alugado = false;
+        quantidadeAlugueisFechados++;
     }
 }

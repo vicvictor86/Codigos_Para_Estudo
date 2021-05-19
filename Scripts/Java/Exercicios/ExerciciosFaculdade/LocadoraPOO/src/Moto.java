@@ -1,6 +1,6 @@
 import java.util.Date;
 
-public class Moto extends Veiculos{
+public class Moto extends Veiculo {
 
     private int cilindradas;
 
