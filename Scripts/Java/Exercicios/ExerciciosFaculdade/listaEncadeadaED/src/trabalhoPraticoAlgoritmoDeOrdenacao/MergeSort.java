@@ -1,12 +1,10 @@
 package trabalhoPraticoAlgoritmoDeOrdenacao;
 
-public class MergeSort<T extends Comparable<T>> {
+public class MergeSort<Tipo extends Comparable<Tipo>> {
 
-    public void ordena(T[] array, int indiceInicio, int indiceFim) {
+    public void ordena(Tipo[] array, int indiceInicio, int indiceFim) {
 
-        // Condicional que verifica a validade dos parâmetros passados.
-        if (array != null && indiceInicio < indiceFim && indiceInicio >= 0 &&
-                indiceFim < array.length && array.length != 0) {
+        if (array != null && indiceInicio < indiceFim && indiceInicio >= 0 && indiceFim < array.length && array.length != 0) {
             int meio = ((indiceFim + indiceInicio) / 2);
 
             ordena(array, indiceInicio, meio);
@@ -14,23 +12,19 @@ public class MergeSort<T extends Comparable<T>> {
 
             merge(array, indiceInicio, meio, indiceFim);
         }
-
     }
 
-    public void merge(T[] array, int indiceInicio, int meio, int indiceFim) {
+    public void merge(Tipo[] array, int indiceInicio, int meio, int indiceFim) {
 
-        T[] auxiliar = (T[]) new Comparable[array.length];
-        //Copiando o trecho da lista que vai ser ordenada
+        Tipo[] auxiliar = (Tipo[]) new Comparable[array.length];
         for (int i = indiceInicio; i <= indiceFim; i++) {
             auxiliar[i] = array[i];
         }
 
-        //Índices auxiliares
         int i = indiceInicio;
         int j = meio + 1;
         int k = indiceInicio;
 
-        //Junção das listas ordenadas
         while (i <= meio && j <= indiceFim) {
             if (auxiliar[i].compareTo(auxiliar[j]) < 0) {
                 array[k] = auxiliar[i];
@@ -42,14 +36,12 @@ public class MergeSort<T extends Comparable<T>> {
             k++;
         }
 
-        //Append de itens que não foram usados na Junção
         while (i <= meio) {
             array[k] = auxiliar[i];
             i++;
             k++;
         }
 
-        //Append de itens que não foram usados na Junção
         while (j <= indiceFim) {
             array[k] = auxiliar[j];
             j++;

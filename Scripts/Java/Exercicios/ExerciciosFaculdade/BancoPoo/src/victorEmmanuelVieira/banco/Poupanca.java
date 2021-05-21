@@ -1,7 +1,12 @@
 package victorEmmanuelVieira.banco;
 
-public class Poupanca extends Conta{
-    public void renderJuros(double juro){
-        credito(getSaldo() * juro);
-    }
+public class Poupanca extends ContaComum {
+
+	public Poupanca(int n) {
+		super(n);
+	}
+
+	public void renderJuros(double taxa) {
+		credito(getSaldo() * taxa);
+	}
 }

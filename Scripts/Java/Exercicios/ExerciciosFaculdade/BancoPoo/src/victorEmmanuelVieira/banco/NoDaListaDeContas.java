@@ -1,40 +1,57 @@
 package victorEmmanuelVieira.banco;
 
-public class NoDaListaDeContas {
+public class NoDaListaDeContas implements EstruturaDeDadosDeContas {
 
-	private NoDaListaDeContas prox;
-	private Conta conta;
-	
+	private NoDaListaDeContas prox = null;
+	private Conta conta = null;
+
+		
 	public void incluir(Conta c) {
 		if (conta == null) {
 		  conta = c;
 		  prox = new NoDaListaDeContas();
-		} else {			
+		} else {
 			prox.incluir(c);
 		}
 	}
-
-	public int size(){
-		int cont = 0;
+	
+	public Conta getConta() {
+		return conta;
+	}
+	
+//	public int size() {
+//		int tam = 0;
+//		NoDaListaDeContas atual = this;
+//		
+//		while (atual.conta != null) {
+//			tam++;
+//			atual = atual.prox;
+//		}
+//		return tam;
+//	}
+	
+	public int size() {
+		if (conta == null) {
+			return 0;
+		} else {
+			return prox.size() + 1;
+		}
+	}
+	   
+	public Conta get(int i) throws ContaInexistente {
+		int indice = 0;
 		NoDaListaDeContas atual = this;
-		while(atual.conta != null) {
-			cont++;
+		
+		while (atual.conta != null) {
+			if (indice == i) {
+				return atual.conta;
+			}
+			indice++;
 			atual = atual.prox;
 		}
-		return cont;
+		throw new ContaInexistente();
 	}
-
-	public Conta get(int n){
-		NoDaListaDeContas aux = this;
-		for(int i = 0; i < n; i++){
-			if(aux == null) {
-				return null;
-			}
-			aux = aux.prox;
-		}
-		return aux.conta;
-	}
-
+	
 	public String listar() {
 		if (conta == null) {
 			return "";
@@ -43,9 +60,9 @@ public class NoDaListaDeContas {
 		}
 	}
 	
-	public Conta pesquisar(int num) {
+	public Conta pesquisar(int num) throws ContaInexistente {
 		if (conta == null) {
-			return null;
+			throw new ContaInexistente();
 		}
 		if (conta.getNum() == num) {
 			return conta;

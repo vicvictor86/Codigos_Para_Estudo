@@ -1,57 +1,41 @@
 package victorEmmanuelVieira.banco;
 
-public class Conta {
-
-    private int numero;
-    private double saldo;
-    
-    private String extrato = "";
+public abstract class Conta {
+	
+    private int num;
+    protected double saldo;
+    protected String extrato = "";
     private PessoaFisica titular;
+	
+	public PessoaFisica getTitular() {
+		return titular;
+	}
 
-    public int getNum() {
-        return numero;
-    }
+	public void setTitular(PessoaFisica titular) {
+		this.titular = titular;
+	}
 
-    public void setNum(int numero) {
-        this.numero = numero;
-    }
+	public String getExtrato() {
+		return extrato;
+	}
 
-    public double getSaldo() {
-        return saldo;
-    }
+	public int getNum() {
+		return num;
+	}
 
-    public PessoaFisica getTitular() {
-        return titular;
-    }
+	public double getSaldo() {
+		return saldo;
+	}
 
-    public void setTitular(PessoaFisica titular) {
-        this.titular = titular;
-    }
-
-    public String getExtrato() {
-        return extrato;
-    }
-
-    public void credito(double valor){
-        if(valor > 0){
-            this.saldo += valor;
-            extrato = extrato + " Crédito: " + valor +
-                    ". Saldo: " + getSaldo() + ".\n";            
-        }else{
-            System.out.println("O valor colocado não é aceito");
-        }
-    }
-
-    public double debito(double valor){
-        if(saldo > 0 && valor <= saldo && valor > 0){
-            this.saldo -= valor;
-            extrato = extrato + " Débito: " + valor +
-                    ". Saldo: " + getSaldo() + ".\n";
-            return valor;
-        }else{
-            System.out.println("A conta " + numero + " não possui saldo suficiente");
-            return 0;
-        }
-    }
-
+	public void credito(double val) {
+		saldo = saldo + val;
+		extrato = extrato + " Crédito: " + val +
+				". Saldo: " + getSaldo() + ".\n";
+	}
+ 
+	public abstract void debito(double val) throws SaldoInsuficiente;
+	
+	public Conta(int n) {
+		num = n;
+	}
 }

@@ -1,81 +1,43 @@
 package victorEmmanuelVieira.banco;
 
 public class Banco {
-
-	private Conta[] contas;
-	private int indice = 0;
-
-	public Banco() {
-		contas = new Conta[50];
+	
+	private EstruturaDeDadosDeContas contas = new VetorDeContas();
+	
+	public void incluir(Conta c) {
+		contas.incluir(c);
 	}
-
-	void incluir(Conta c) {
-		if (indice < 50) {
-			contas[indice++] = c;
-		} else {
-			System.out.println("Falha na inclusão da conta");
-		}
+	
+	private Conta pesquisar(int n) throws ContaInexistente {
+		return contas.pesquisar(n);
 	}
-
-	private Conta procuraConta(int num) {
-		for (int i = 0; i < indice; i++) {
-			if (contas[i].getNum() == num) {
-				return contas[i];
-			}
-		}
-		return null;
+	
+	public void saque(int n, double v) throws SaldoInsuficiente, ContaInexistente {
+		Conta c = pesquisar(n);
+		c.debito(v);
 	}
-
-	public void deposito(int num, double val) {
-		Conta conta = procuraConta(num);
-		if (conta != null) {
-			conta.credito(val);
-		}
+	
+	public void deposito(int n, double v) throws ContaInexistente {
+		Conta c = pesquisar(n);
+		c.credito(v);
 	}
-
-	public void saque(int num, double val) {
-		Conta conta = procuraConta(num);
-		if (conta != null) {
-			conta.debito(val);
+	
+	public void rendeJuros(int n, double t) throws ContaInexistente, NaoEhPoupanca {
+		Conta c = pesquisar(n);
+		if (c instanceof Poupanca) {
+		   ((Poupanca) c).renderJuros(t);
+		}else {
+			throw new NaoEhPoupanca(n);
 		}
+	}	
+	
+	public double saldo(int n) throws ContaInexistente {
+		Conta c = pesquisar(n);
+		return c.getSaldo();
 	}
-
-	public double saldo(int num) {
-		Conta conta = procuraConta(num);
-		if (conta != null) {
-			return conta.getSaldo();
-		}
-		return -999999;
-	}
-
-	public void renderJuros(int num){
-		Conta conta = procuraConta(num);
-		if(conta != null && conta instanceof Poupanca){
-			((Poupanca) conta).renderJuros(num);
-		}
-	}
-
-	public void transfere(int paga, int recebe, double valor) {
-		Conta contaPaga = procuraConta(paga);
-		Conta contaRecebe = procuraConta(recebe);
-
-		if (contaPaga != null && contaRecebe != null) {
-			double valorRetirado = contaPaga.debito(valor);
-			contaRecebe.credito(valorRetirado);
-			System.out.println("A conta " + contaPaga.getNum() + " transferiu: " + valorRetirado
-					+ " reais para a conta " + contaRecebe.getNum());
-		} else {
-			System.out.println("A transferência não teve sucesso");
-		}
-
-	}
-
-	public String extrato(int num) {
-		Conta contaExtrato = procuraConta(num);
-		if (contaExtrato != null) {
-			return contaExtrato.getExtrato();
-		} else {
-			return "";
-		}
+	
+	public String extrato(int n) throws ContaInexistente {
+		Conta c = pesquisar(n);
+		return c.getExtrato();
 	}
 }
