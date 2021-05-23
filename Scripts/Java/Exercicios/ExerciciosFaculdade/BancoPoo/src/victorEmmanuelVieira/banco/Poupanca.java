@@ -6,7 +6,7 @@ public class Poupanca extends ContaComum {
 		super(n);
 	}
 
-	public void renderJuros(double taxa) {
+	public void renderJuros(Conta c, double taxa) {
 		credito(getSaldo() * taxa);
 	}
 }

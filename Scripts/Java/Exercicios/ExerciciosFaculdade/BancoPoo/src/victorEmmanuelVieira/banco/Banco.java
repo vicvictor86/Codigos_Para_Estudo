@@ -24,10 +24,10 @@ public class Banco {
 	
 	public void rendeJuros(int n, double t) throws ContaInexistente, NaoEhPoupanca {
 		Conta c = pesquisar(n);
-		if (c instanceof Poupanca) {
-		   ((Poupanca) c).renderJuros(t);
-		}else {
-			throw new NaoEhPoupanca(n);
+		if(c instanceof Poupanca) {			
+			((Poupanca) c).renderJuros(c, t);
+		}else{
+			throw new NaoEhPoupanca(c.getNum());
 		}
 	}	
 	
