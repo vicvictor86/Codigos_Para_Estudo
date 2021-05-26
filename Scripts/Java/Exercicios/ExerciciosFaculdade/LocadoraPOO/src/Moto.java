@@ -1,4 +1,3 @@
-import java.util.Date;
 
 public class Moto extends Veiculo {
 
@@ -8,7 +7,7 @@ public class Moto extends Veiculo {
         this.cilindradas = cilindradas;
     }
 
-    public Moto(String marca, String modelo, Date anoDeFabricacao, String placa, double valorDiaria, double valorDeBem, int cilindradas) {
+    public Moto(String marca, String modelo, int anoDeFabricacao, String placa, double valorDiaria, double valorDeBem, int cilindradas) {
         super(marca, modelo, anoDeFabricacao, placa, valorDiaria, valorDeBem, 0.11);
         this.cilindradas = cilindradas;
     }

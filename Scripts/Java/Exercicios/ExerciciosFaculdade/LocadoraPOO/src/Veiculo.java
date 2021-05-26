@@ -1,10 +1,9 @@
-import java.util.Date;
 
 public abstract class Veiculo {
 
     private String marca;
     private String modelo;
-    private Date anoDeFabricacao;
+    private int anoDeFabricacao;
     private String placa;
     private double valorDiaria;
     private double valorDeBem;
@@ -12,12 +11,13 @@ public abstract class Veiculo {
     private boolean alugado;
     private int quantidadeAlugueisFechados;
     private Cliente clienteAlugou;
+    private double precoAluguel;
 
     public Veiculo(){
 
     }
 
-    public Veiculo(String marca, String modelo, Date anoDeFabricacao, String placa, double valorDiaria, double valorDeBem, double porcentagem) {
+    public Veiculo(String marca, String modelo, int anoDeFabricacao, String placa, double valorDiaria, double valorDeBem, double porcentagem) {
         this.marca = marca;
         this.modelo = modelo;
         this.anoDeFabricacao = anoDeFabricacao;
@@ -28,6 +28,7 @@ public abstract class Veiculo {
         this.alugado = false;
         this.quantidadeAlugueisFechados = 0;
         this.clienteAlugou = null;
+        this.precoAluguel = 0.0;
     }
 
     public double seguroDiario(){
@@ -66,7 +67,7 @@ public abstract class Veiculo {
         return modelo;
     }
 
-    public Date getAnoDeFabricacao() {
+    public int getAnoDeFabricacao() {
         return anoDeFabricacao;
     }
 
@@ -78,7 +79,7 @@ public abstract class Veiculo {
         return valorDiaria;
     }
 
-    public double getValorDeBem() {
+    public double getValorAvaliado() {
         return valorDeBem;
     }
 
@@ -100,10 +101,18 @@ public abstract class Veiculo {
 
     public void alugar(){
         this.alugado = true;
+        quantidadeAlugueisFechados++;
     }
 
     public void devolver(){
         this.alugado = false;
-        quantidadeAlugueisFechados++;
+    }
+    
+    public double getPrecoAluguel() {
+        return precoAluguel;
+    }
+
+    public void setPrecoAluguel(double precoAluguel) {
+        this.precoAluguel = precoAluguel;
     }
 }

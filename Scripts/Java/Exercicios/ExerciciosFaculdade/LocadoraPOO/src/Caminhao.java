@@ -1,4 +1,3 @@
-import java.util.Date;
 
 public class Caminhao extends Veiculo {
 
@@ -8,7 +7,7 @@ public class Caminhao extends Veiculo {
         this.capacidadeDeCarga = capacidadeDeCarga;
     }
 
-    public Caminhao(String marca, String modelo, Date anoDeFabricacao, String placa, double valorDiaria, double valorDeBem, int capacidadeDeCarga) {
+    public Caminhao(String marca, String modelo, int anoDeFabricacao, String placa, double valorDiaria, double valorDeBem, int capacidadeDeCarga) {
         super(marca, modelo, anoDeFabricacao, placa, valorDiaria, valorDeBem, 0.08);
         this.capacidadeDeCarga = capacidadeDeCarga;
     }

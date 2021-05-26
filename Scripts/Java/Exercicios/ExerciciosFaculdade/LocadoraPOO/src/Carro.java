@@ -1,5 +1,3 @@
-import java.util.Date;
-
 public class Carro extends Veiculo {
 
     private int categoria;
@@ -8,7 +6,7 @@ public class Carro extends Veiculo {
         this.categoria = categoria;
     }
 
-    public Carro(String marca, String modelo, Date anoDeFabricacao, String placa, double valorDiaria, double valorDeBem, int categoria) {
+    public Carro(String marca, String modelo, int anoDeFabricacao, String placa, double valorDiaria, double valorDeBem, int categoria) {
         super(marca, modelo, anoDeFabricacao, placa, valorDiaria, valorDeBem, 0.03);
         this.categoria = categoria;
     }
