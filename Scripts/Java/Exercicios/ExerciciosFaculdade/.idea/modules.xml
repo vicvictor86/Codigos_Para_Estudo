@@ -3,9 +3,12 @@
   <component name="ProjectModuleManager">
     <modules>
       <module fileurl="file://$PROJECT_DIR$/BancoPoo/BancoPoo.iml" filepath="$PROJECT_DIR$/BancoPoo/BancoPoo.iml" />
+      <module fileurl="file://$PROJECT_DIR$/EDTrabalhos/EDTrabalhos.iml" filepath="$PROJECT_DIR$/EDTrabalhos/EDTrabalhos.iml" />
       <module fileurl="file://$PROJECT_DIR$/.idea/ExerciciosFaculdade.iml" filepath="$PROJECT_DIR$/.idea/ExerciciosFaculdade.iml" />
       <module fileurl="file://$PROJECT_DIR$/LocadoraPOO/LocadoraPOO.iml" filepath="$PROJECT_DIR$/LocadoraPOO/LocadoraPOO.iml" />
+      <module fileurl="file://$PROJECT_DIR$/TrabalhoFinalED/TrabalhoFinalED.iml" filepath="$PROJECT_DIR$/TrabalhoFinalED/TrabalhoFinalED.iml" />
       <module fileurl="file://$PROJECT_DIR$/listaEncadeadaED/listaEncadeadaED.iml" filepath="$PROJECT_DIR$/listaEncadeadaED/listaEncadeadaED.iml" />
+      <module fileurl="file://$PROJECT_DIR$/provaPOO/provaPOO.iml" filepath="$PROJECT_DIR$/provaPOO/provaPOO.iml" />
     </modules>
   </component>
 </project>
