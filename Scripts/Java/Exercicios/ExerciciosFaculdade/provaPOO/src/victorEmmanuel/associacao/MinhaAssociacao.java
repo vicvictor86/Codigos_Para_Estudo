@@ -9,7 +9,7 @@ public class MinhaAssociacao implements InterfaceAssociacao {
     @Override
     public void adicionar(Associacao a) throws AssociacaoJaExistente, ValorInvalido {
 
-        if (a.getNum() < 0 || a.getNome().isEmpty()) {
+        if (a.getNum() < 0 || a.getNome() == "" || a.getNome() == null) {
             throw new ValorInvalido();
         }
 
@@ -24,7 +24,7 @@ public class MinhaAssociacao implements InterfaceAssociacao {
 
     @Override
     public void adicionar(int associacao, Associado a) throws AssociacaoNaoExistente, AssociadoJaExistente, ValorInvalido {
-        if (a.getNumero() < 0 || a.getNome().isEmpty() || a.getDataAssociacao() <= 0 || a.getNascimento() <= 0 || a.getTelefone().isEmpty()) {
+        if (a.getNumero() < 0 || a.getNome() == "" || a.getDataAssociacao() <= 0 || a.getNascimento() <= 0 || a.getTelefone() == "" || a.getTelefone() == null || a.getNome() == null) {
             throw new ValorInvalido();
         }
 
@@ -39,7 +39,7 @@ public class MinhaAssociacao implements InterfaceAssociacao {
 
     @Override
     public void adicionar(int associacao, Reuniao r) throws AssociacaoNaoExistente, ReuniaoJaExistente, ValorInvalido {
-        if (r.getData() <= 0 || r.getAta().isEmpty()) {
+        if (r.getData() <= 0 || r.getAta() == "" || r.getAta() == null) {
             throw new ValorInvalido();
         }
 
@@ -54,7 +54,7 @@ public class MinhaAssociacao implements InterfaceAssociacao {
 
     @Override
     public void adicionar(int associacao, Taxa t) throws AssociacaoNaoExistente, TaxaJaExistente, ValorInvalido {
-        if (t.getVigencia() < 0 || t.getNome().isEmpty() || t.getParcelas() <= 0 || t.getValorAno() <= 0) {
+        if (t.getVigencia() < 0 || t.getNome() == "" || t.getParcelas() <= 0 || t.getValorAno() <= 0 || t.getNome() == null) {
             throw new ValorInvalido();
         }
 
