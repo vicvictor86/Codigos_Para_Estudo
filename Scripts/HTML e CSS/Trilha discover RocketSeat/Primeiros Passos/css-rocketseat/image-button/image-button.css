@@ -1,0 +1,17 @@
+.container {
+    display: flex;
+    justify-content: center;
+    gap: 3rem;
+  }
+  
+  button {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 0.4rem;
+  }
+  
+  button img {
+    width: 2rem;
+    height: 2rem;
+  }
