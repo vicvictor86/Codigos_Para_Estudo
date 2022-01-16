@@ -3,7 +3,7 @@ module.exports = {
 
         //Quantos dias tenho para fazer o projeto
         const remainingDays = (job["total-hours"] / job["daily-hours"]).toFixed();
-    
+        
         //Quando eu aceitei o projeto
         const createdDate = new Date(job.created_at);
         //Qual é o dia máximo para entrega
