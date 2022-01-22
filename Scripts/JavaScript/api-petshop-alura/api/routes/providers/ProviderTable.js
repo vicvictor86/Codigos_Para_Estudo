@@ -1,8 +1,9 @@
 const Model = require('./ProviderModel');
+const NotFound = require('../../../api/error/NotFound');
 
 module.exports ={
     async list(){
-        return await Model.findAll();
+        return await Model.findAll({ raw: true });
     },
 
     async insert(provider){
@@ -17,7 +18,7 @@ module.exports ={
         })
 
         if(!result){
-            throw new Error("Fornecedor não encontrado");
+            throw new NotFound();
         }
 
         return result;

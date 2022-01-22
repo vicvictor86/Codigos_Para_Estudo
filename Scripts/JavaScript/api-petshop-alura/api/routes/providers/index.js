@@ -1,55 +1,50 @@
 const router = require('express').Router();
 const ProviderTable = require('./ProviderTable');
 const Provider = require("./Provider");
+const ProviderSerializer = require("../../Serializer").ProviderSerializer;
 
 router.get("/", async (req, res) => {
     const results = await ProviderTable.list();
     res.status(200);
+    const serializer = new ProviderSerializer(res.getHeader('Content-Type'));
     res.send(
-        JSON.stringify(results)
+        serializer.serialize(results)
     );
 })
 
-router.post("/", async (req, res) => {
+router.post("/", async (req, res, next) => {
     const data = req.body;
 
     try{
         const provider = new Provider(data);
         await provider.create();
         res.status(201);
+        const serializer = new ProviderSerializer(res.getHeader('Content-Type'));
         res.send(
-            JSON.stringify(provider)
+            serializer.serialize(provider)
         )
-    }catch(e){
-        res.status(400);
-        res.send(
-            JSON.stringify({message : e.message})
-        )
+    }catch(error){
+        next(error);
     }
-
 })
 
-router.get("/:id", async (req, res) => {
+router.get("/:id", async (req, res, next) => {
     const id = req.params.id;
     const provider = new Provider({ id: id });
 
     try{
         await provider.load();
         res.status(200);
+        const serializer = new ProviderSerializer(res.getHeader('Content-Type'));
         res.send(
-            JSON.stringify(provider)
+            serializer.serialize(provider)
         )
-    }catch(e){
-        res.status(404);
-        res.send(
-            JSON.stringify({
-                mensagem: e.message
-            })
-        )
+    }catch(error){
+        next(error);
     }
 })
 
-router.put("/:id", async (req, res) => {
+router.put("/:id", async (req, res, next) => {
     try{
         const id = req.params.id;
         const dataReceive = req.body;
@@ -59,15 +54,12 @@ router.put("/:id", async (req, res) => {
         await provider.update()
         res.status(204);
         res.end();
-    }catch(e){
-        res.status(400);
-        res.send(
-            JSON.stringify({messagem: e.message})
-        );
+    }catch(error){
+        next(error);
     }
 })
 
-router.delete("/:id", async (req, res) => {
+router.delete("/:id", async (req, res, next) => {
     try{
         const id = req.params.id;
         const provider = new Provider( {id: id} );
@@ -76,11 +68,8 @@ router.delete("/:id", async (req, res) => {
         await provider.remove();
         res.status(204);
         res.end();
-    }catch(e){
-        res.status(404);
-        res.send(
-            JSON.stringify({message : e.message})
-        )
+    }catch(error){
+        next(error)
     }
 })
 

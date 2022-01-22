@@ -1,4 +1,7 @@
 const ProviderTable = require('./ProviderTable');
+const InvalidField = require('../../error/InvalidField');
+const InsuficientData = require('../../error/InsuficientData');
+
 
 class Provider {
     constructor({ id, company, email, category, create_at, update_at, version }){
@@ -50,7 +53,7 @@ class Provider {
         })
 
         if(Object.keys(updateData).length === 0){
-            throw new Error("Não foram fornecidos dados para atualizar");
+            throw new InsuficientData();
         }
 
         await ProviderTable.update(this.id, updateData);
@@ -67,7 +70,7 @@ class Provider {
             const value = this[field];
 
             if(typeof value !== "string" || value.length === 0){
-                throw new Error(`O campo "${field}" está inválido`);
+                throw new InvalidField(field)
             }
         })
     }
