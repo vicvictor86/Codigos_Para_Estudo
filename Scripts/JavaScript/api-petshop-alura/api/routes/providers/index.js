@@ -14,7 +14,7 @@ router.get("/", async (req, res) => {
 
 router.post("/", async (req, res, next) => {
     const data = req.body;
-
+    
     try{
         const provider = new Provider(data);
         await provider.create();
@@ -35,7 +35,7 @@ router.get("/:id", async (req, res, next) => {
     try{
         await provider.load();
         res.status(200);
-        const serializer = new ProviderSerializer(res.getHeader('Content-Type'));
+        const serializer = new ProviderSerializer(res.getHeader('Content-Type'), ["email", "createdAt", "updatedAt", "version"]);
         res.send(
             serializer.serialize(provider)
         )

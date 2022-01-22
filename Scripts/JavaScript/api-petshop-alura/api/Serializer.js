@@ -1,16 +1,34 @@
-const c = require('config');
 const UnsupportedValue = require('./error/UnsupportedValue')
+const jsontoxml = require('jsontoxml');
 
 class Serializer {
     json(data){
         return JSON.stringify(data);
     }
 
+    xml(data){
+        let tag = this.tagSingular;
+
+        if(Array.isArray(data)){
+            tag = this.tagPlural;
+            data = data.map(item => {
+                return {
+                    [this.tagSingular]: item
+                }
+            })
+        }
+
+        return jsontoxml({ [tag]: data });
+    }
+
     serialize(data){
+        data = this.filterData(data);
         if (this.contentType === 'application/json'){
-            return this.json(
-                this.filterData(data)
-            );
+            return this.json(data);
+        }
+
+        if(this.contentType === 'application/xml'){
+            return this.xml(data);
         }
 
         throw new UnsupportedValue(this.contentType);
@@ -42,15 +60,31 @@ class Serializer {
 };
 
 class ProviderSerializer extends Serializer {
-    constructor(contentType){
+    constructor(contentType, extraFields){
         super();
         this.contentType = contentType;
-        this.publicField = ["id", "company", "category"];
+        this.publicField = ["id", "company", "category"].concat(extraFields || []);
+        this.tagSingular = "provider";
+        this.tagPlural = "providers";
+    }
+}
+
+class ErrorSerializer extends Serializer {
+    constructor(contentType, extraFields){
+        super();
+        this.contentType = contentType;
+        this.publicField = [
+            "id",
+            "message"
+        ].concat(extraFields || []);
+        this.tagSingular = "error";
+        this.tagPlural = "errors";
     }
 }
 
 module.exports = {
     Serializer: Serializer,
     ProviderSerializer: ProviderSerializer,
-    acceptFormats: ["application/json"]
+    ErrorSerializer: ErrorSerializer,
+    acceptFormats: ["application/json", "application/xml"]
 };

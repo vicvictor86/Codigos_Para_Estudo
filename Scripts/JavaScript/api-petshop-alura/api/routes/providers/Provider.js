@@ -4,13 +4,13 @@ const InsuficientData = require('../../error/InsuficientData');
 
 
 class Provider {
-    constructor({ id, company, email, category, create_at, update_at, version }){
+    constructor({ id, company, email, category, createdAt, updatedAt, version }){
         this.id = id;
         this.company = company;
         this.email = email;
         this.category = category;
-        this.create_at = create_at;
-        this.update_at = update_at;
+        this.createdAt = createdAt;
+        this.updatedAt = updatedAt;
         this.version = version;
     }
 
@@ -23,8 +23,8 @@ class Provider {
         })
 
         this.id = result.id,
-        this.create_at = result.create_at,
-        this.update_at = result.update_at,
+        this.createdAt = result.createdAt,
+        this.updatedAt = result.updatedAt,
         this.version = result.version
     }
 
@@ -34,8 +34,8 @@ class Provider {
         this.company = provider.company;
         this.email = provider.email;
         this.category = provider.category;
-        this.create_at = provider.create_at;
-        this.update_at = provider.update_at;
+        this.createdAt = provider.createdAt;
+        this.updatedAt = provider.updatedAt;
         this.version = provider.version;
     }
 
@@ -68,7 +68,7 @@ class Provider {
 
         fields.forEach(field => {
             const value = this[field];
-
+            
             if(typeof value !== "string" || value.length === 0){
                 throw new InvalidField(field)
             }

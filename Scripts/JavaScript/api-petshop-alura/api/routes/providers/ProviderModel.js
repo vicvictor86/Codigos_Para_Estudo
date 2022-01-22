@@ -19,7 +19,8 @@ const columns = {
 const options = {
     freezeTableName: true,
     tableName: "providers",
-    timestamps: true
+    timestamps: true,
+    version: "version"
 }
 
 module.exports = instance.define("provider", columns, options);
