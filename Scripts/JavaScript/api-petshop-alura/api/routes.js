@@ -1,7 +1,7 @@
 const router = require('express').Router();
-const ProviderTable = require('./ProviderTable');
-const Provider = require("./Provider");
-const ProviderSerializer = require("../../Serializer").ProviderSerializer;
+const ProviderTable = require('./model/ProviderTable');
+const Provider = require("./controller/Provider");
+const ProviderSerializer = require("./Serializer").ProviderSerializer;
 
 router.get("/", async (req, res) => {
     const results = await ProviderTable.list();
@@ -14,7 +14,7 @@ router.get("/", async (req, res) => {
 
 router.post("/", async (req, res, next) => {
     const data = req.body;
-    
+
     try{
         const provider = new Provider(data);
         await provider.create();

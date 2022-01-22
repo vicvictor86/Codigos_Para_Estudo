@@ -1,5 +1,5 @@
 const Model = require('./ProviderModel');
-const NotFound = require('../../../api/error/NotFound');
+const NotFound = require('../error/NotFound');
 
 module.exports ={
     async list(){

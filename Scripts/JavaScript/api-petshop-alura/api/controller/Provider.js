@@ -1,6 +1,6 @@
-const ProviderTable = require('./ProviderTable');
-const InvalidField = require('../../error/InvalidField');
-const InsuficientData = require('../../error/InsuficientData');
+const ProviderTable = require('../model/ProviderTable');
+const InvalidField = require('../error/InvalidField');
+const InsuficientData = require('../error/InsuficientData');
 
 
 class Provider {

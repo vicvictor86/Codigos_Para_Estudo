@@ -1,4 +1,4 @@
-const tabelModel = require('../routes/providers/ProviderModel');
+const tabelModel = require('../model/ProviderModel');
 
 tabelModel
     .sync()
