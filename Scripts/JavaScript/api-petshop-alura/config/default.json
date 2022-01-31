@@ -1,5 +1,5 @@
 {
-    "mysql":{
+    "myDatabase":{
         "database": "petshop",
         "user": "root",
         "password": "123456",
