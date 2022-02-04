@@ -9,3 +9,4 @@ AplicacaoDjango/
 projeto-clientes
 node_modules/
 venv/
+.env

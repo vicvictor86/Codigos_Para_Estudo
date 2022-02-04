@@ -24,6 +24,14 @@ export default function App(){
         
         setProjects([...projects, project]);
     }
+
+    function handleRemoveProject(id){
+        api.delete(`projects/${id}`)
+
+        const projectFiltred = projects.filter(project => project.id !== id);
+        
+        setProjects([...projectFiltred]);
+    }
     
     return (
         <>
@@ -34,6 +42,7 @@ export default function App(){
                 </ul>
 
                 <button type="button" onClick={handleAddProject}>Adicionar projeto</button>
+                <button type="button" onClick={() => handleRemoveProject(projects[projects.length - 1].id)}>Remover projeto</button>
             </Header>
         </>
     );
