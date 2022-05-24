@@ -14,6 +14,9 @@ class User {
     @Column()
     password: string;
 
+    @Column({type: 'varchar', nullable: true})
+    avatar: string | undefined;
+
     @CreateDateColumn()
     created_at: Date;
 
